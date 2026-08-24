@@ -11,7 +11,7 @@ let obstacleX = 900
 let score = 0
 let isjumping = false
 let highScore = localStorage.getItem("marioHighScore") || 0;
-
+let isPaused = false;
 
 document.addEventListener("keydown", (e) => {
     if (gameRunning === false) {
@@ -39,6 +39,10 @@ document.addEventListener("keydown", (e) => {
         e.key === "ArrowUp"
     ) {
         jump();
+    }
+    if (e.key === "p") {
+        isPaused = !isPaused;
+        return;
     }
 
     function jump() {
@@ -75,8 +79,8 @@ document.addEventListener("keydown", (e) => {
 //game loop
 
 let gameLoop = setInterval(function () {
-    if (gameRunning === false) {
-        return
+    if (gameRunning === false || isPaused === true) {
+        return;
     }
     let obstacleSpeed = 5 + Math.floor(score / 5);
 
