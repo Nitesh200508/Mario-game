@@ -77,7 +77,9 @@ let gameLoop = setInterval(function () {
     if (gameRunning === false) {
         return
     }
-    obstacleX = obstacleX - 5
+    let obstacleSpeed = 5 + Math.floor(score / 5);
+
+    obstacleX = obstacleX - obstacleSpeed;
     obstacle.style.left = obstacleX + "px"
 
     if (obstacleX < -40) {
