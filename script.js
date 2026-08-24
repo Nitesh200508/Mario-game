@@ -15,6 +15,9 @@ document.addEventListener("keydown", (e) => {
     if (gameRunning === false) {
         return
     }
+    if (e.key === "Enter" && gameRunning === false) {
+        button.click();
+    }
     if (e.key == "d" || e.key === "ArrowRight") {
         marioX = marioX + 10
         if (marioX > 750) {
