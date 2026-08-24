@@ -1,0 +1,116 @@
+let mario = document.querySelector(".mario")
+let obstacle = document.querySelector(".obstacle")
+let gameOverBox = document.querySelector(".game-over")
+let button = document.querySelector("button")
+let scoreText = document.querySelector(".score")
+let gameRunning = true
+let marioX = 50
+let marioY = 0
+let obstacleX = 900
+let score = 0
+let isjumping = false
+
+
+document.addEventListener("keydown", (e) => {
+    if (gameRunning === false) {
+        return
+    }
+    if (e.key == "d" || e.key === "ArrowRight") {
+        marioX = marioX + 10
+        if (marioX > 750) {
+            marioX = 750
+        }
+        mario.style.left = marioX + "px"
+    }
+    if (e.key == "a" || e.key === "ArrowLeft") {
+        marioX = marioX - 10
+        if (marioX < 0) {
+            marioX = 0
+        }
+        mario.style.left = marioX + "px"
+    }
+    if (e.key === " " ||
+        e.key === "w" ||
+        e.key === "ArrowUp"
+    ) {
+        jump();
+    }
+
+    function jump() {
+        if (isjumping === true) {
+            return
+        }
+        isjumping = true
+
+        let jumpUp = setInterval(() => {
+            marioY = marioY + 10
+            mario.style.bottom = marioY + "px"
+
+            if (marioY >= 130) {
+                clearInterval(jumpUp)
+
+                let jumpDown = setInterval(() => {
+                    marioY = marioY - 10
+                    mario.style.bottom = marioY + "px"
+                    if (marioY <= 0) {
+                        marioY = 0
+                        mario.style.bottom = "0px"
+                        clearInterval(jumpDown)
+                        isjumping = false
+                    }
+                }, 20);
+            }
+        }, 20);
+    }
+
+})
+
+//game loop
+
+let gameLoop = setInterval(function () {
+    if (gameRunning === false) {
+        return
+    }
+    obstacleX = obstacleX - 5
+    obstacle.style.left = obstacleX + "px"
+
+    if (obstacleX < -40) {
+        obstacleX = 800
+        score++
+    }
+    scoreText.innerHTML = "Score: " + score
+
+    let marioBox = mario.getBoundingClientRect()
+    let obstacleBox = obstacle.getBoundingClientRect()
+
+    let isCollision = !(
+        marioBox.right < obstacleBox.left ||
+        marioBox.left > obstacleBox.right ||
+        marioBox.bottom < obstacleBox.top ||
+        marioBox.top > obstacleBox.bottom
+    )
+
+    if (isCollision) {
+        gameover()
+    }
+}, 10);
+
+button.addEventListener("click", () => {
+    gameRunning = true
+    obstacleX = 900
+    score = 0
+    marioX = 50
+    marioY = 0
+    mario.style.left = marioX + "px"
+    mario.style.bottom = marioY + "px"
+    obstacle.style.left = obstacleX + "px"
+    scoreText.innerHTML = "Score: " + score
+    gameOverBox.style.display = "none"
+})
+
+// game over function
+function gameover() {
+    gameRunning = false
+
+    gameOverBox.style.display = "flex"
+};
