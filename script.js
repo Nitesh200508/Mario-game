@@ -10,6 +10,7 @@ let marioY = 0
 let obstacleX = 900
 let score = 0
 let isjumping = false
+let highScore = localStorage.getItem("marioHighScore") || 0;
 
 
 document.addEventListener("keydown", (e) => {
@@ -117,7 +118,7 @@ button.addEventListener("click", () => {
     mario.style.left = marioX + "px"
     mario.style.bottom = marioY + "px"
     obstacle.style.left = obstacleX + "px"
-    scoreText.innerHTML = "Score: " + score
+    scoreText.innerHTML = "Score: " + score + " | High Score: " + highScore
     gameOverBox.style.display = "none"
 })
 
@@ -126,4 +127,8 @@ function gameover() {
     gameRunning = false
 
     gameOverBox.style.display = "flex"
+    if (score > highScore) {
+        highScore = score;
+        localStorage.setItem("marioHighScore", highScore);
+    }
 };
