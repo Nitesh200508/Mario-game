@@ -87,7 +87,7 @@ let gameLoop = setInterval(function () {
         obstacleX = 800
         score++
     }
-    scoreText.innerHTML = "Score: " + score
+    scoreText.innerHTML = "Score: " + score + " | High Score: " + highScore
     if (score > 0 && score % 5 === 0) {
         message.innerHTML = "Great!";
     } else {
