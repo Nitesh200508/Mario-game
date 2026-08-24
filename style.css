@@ -87,3 +87,10 @@ html, body {
 .mario.jumping {
     transform: scale(1.05);
 }
+.message {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
