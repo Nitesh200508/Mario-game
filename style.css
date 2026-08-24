@@ -115,6 +115,13 @@ html, body {
     font-size: 22px;
     margin-bottom: 20px;
 }
+.start-message {
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+}
 @media (max-width: 850px) {
     .game {
         width: 95%;

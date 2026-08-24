@@ -5,6 +5,7 @@ let button = document.querySelector("button")
 let scoreText = document.querySelector(".score")
 let message = document.querySelector(".message");
 let finalScore = document.querySelector(".final-score");
+let startMessage = document.querySelector(".start-message");
 let gameRunning = true
 let marioX = 50
 let marioY = 0
@@ -49,6 +50,7 @@ document.addEventListener("keydown", (e) => {
 
         return;
     }
+    startMessage.style.display = "none";
 
     function jump() {
         if (isjumping === true) {
