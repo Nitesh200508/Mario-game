@@ -41,6 +41,7 @@ document.addEventListener("keydown", (e) => {
             return
         }
         isjumping = true
+        mario.classList.add("jumping");
 
         let jumpUp = setInterval(() => {
             marioY = marioY + 10
@@ -57,6 +58,7 @@ document.addEventListener("keydown", (e) => {
                         mario.style.bottom = "0px"
                         clearInterval(jumpDown)
                         isjumping = false
+                        mario.classList.remove("jumping");
                     }
                 }, 20);
             }
