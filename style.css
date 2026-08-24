@@ -35,15 +35,16 @@ html, body {
     object-fit: contain;
     image-rendering: pixelated;
 }
-.obstacle{
-    width: 40px;
-    height: 50px;
-    background-color: brown;
+.obstacle {
+    width: 45px;
+    height: 55px;
+    background-color: #8b4513;
     position: absolute;
     right: 0;
     bottom: 0;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: inset 5px 0 rgba(0, 0, 0, 0.15);
 }
 .score{
     position: absolute;
