@@ -130,11 +130,7 @@ This project helped me practice:
 
 ## 📸 Game Preview
 
-Add a screenshot of the running game here:
-
-```markdown
-![Mario Game](screenshot.png)
-```
+![Mario Jump Game Screenshot](game-screenshot.png)
 
 ## 👨‍💻 Author
 
