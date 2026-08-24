@@ -42,6 +42,10 @@ document.addEventListener("keydown", (e) => {
     }
     if (e.key === "p") {
         isPaused = !isPaused;
+
+        document.querySelector(".pause-message").style.display =
+            isPaused ? "block" : "none";
+
         return;
     }
 

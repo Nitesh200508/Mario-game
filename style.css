@@ -94,3 +94,12 @@ html, body {
     font-size: 18px;
     font-weight: bold;
 }
+.pause-message {
+    display: none;
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 20;
+}
