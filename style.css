@@ -77,12 +77,20 @@ html, body {
     font-size: 50px;
     margin-bottom: 20px;
 }
-.game-over button{
+.game-over button {
     padding: 12px 30px;
     font-size: 20px;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    background-color: #ff3b30;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.game-over button:hover {
+    transform: scale(1.08);
 }
 .mario.jumping {
     transform: scale(1.05);
