@@ -4,6 +4,7 @@ let gameOverBox = document.querySelector(".game-over")
 let button = document.querySelector("button")
 let scoreText = document.querySelector(".score")
 let message = document.querySelector(".message");
+let finalScore = document.querySelector(".final-score");
 let gameRunning = true
 let marioX = 50
 let marioY = 0
@@ -139,4 +140,5 @@ function gameover() {
         highScore = score;
         localStorage.setItem("marioHighScore", highScore);
     }
+    finalScore.innerHTML = "Final Score: " + score;
 };

@@ -103,3 +103,7 @@ html, body {
     font-weight: bold;
     z-index: 20;
 }
+.final-score {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
