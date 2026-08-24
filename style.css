@@ -115,3 +115,16 @@ html, body {
     font-size: 22px;
     margin-bottom: 20px;
 }
+@media (max-width: 850px) {
+    .game {
+        width: 95%;
+    }
+
+    .instructions {
+        font-size: 11px;
+    }
+
+    .score {
+        font-size: 16px;
+    }
+}
