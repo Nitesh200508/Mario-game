@@ -119,16 +119,7 @@ let gameLoop = setInterval(function () {
 }, 10);
 
 button.addEventListener("click", () => {
-    gameRunning = true
-    obstacleX = 900
-    score = 0
-    marioX = 50
-    marioY = 0
-    mario.style.left = marioX + "px"
-    mario.style.bottom = marioY + "px"
-    obstacle.style.left = obstacleX + "px"
-    scoreText.innerHTML = "Score: " + score + " | High Score: " + highScore
-    gameOverBox.style.display = "none"
+    resetGame();
 })
 
 // game over function
@@ -142,3 +133,24 @@ function gameover() {
     }
     finalScore.innerHTML = "Final Score: " + score;
 };
+function resetGame() {
+    gameRunning = true;
+    isPaused = false;
+
+    obstacleX = 900;
+    score = 0;
+    marioX = 50;
+    marioY = 0;
+
+    mario.style.left = marioX + "px";
+    mario.style.bottom = marioY + "px";
+
+    obstacle.style.left = obstacleX + "px";
+
+    gameOverBox.style.display = "none";
+
+    document.querySelector(".pause-message").style.display = "none";
+
+    scoreText.innerHTML =
+        "Score: " + score + " | High Score: " + highScore;
+}
