@@ -29,10 +29,11 @@ html, body {
     left: 50px;
     bottom: 0;
 }
-.mario img{
+.mario img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    image-rendering: pixelated;
 }
 .obstacle{
     width: 40px;
